@@ -34,4 +34,4 @@ for(i in 1:49){
 #i
 plot(mydata_sd,betas, xlim= c(0,20), ylim=c(0,2), main=expression(beta ~ "versus" ~ sigma), ylab = expression(beta), xlab = expression(sigma))
 #j
-plot(betas,mydata_mean, xlim=c(0,2),ylim=c(0,1.8),main=expression("Return versus Systematic Risk"), ylab="Avg. Return", xlab=expression(beta))
+plot(betas,mydata_mean, xlim=c(0,2),ylim=c(0,1.8),main=expression("Systematic Risk versus Return"), ylab="Avg. Return", xlab=expression(beta))
