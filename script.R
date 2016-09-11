@@ -32,6 +32,11 @@ for(i in 1:49){
   betas[i]<- coef(single_beta)["ff$Mkt.RF"]
 }
 #i
+lm_1 <- lm(betas ~ mydata_sd)
 plot(mydata_sd,betas, xlim= c(0,20), ylim=c(0,2), main=expression(beta ~ "versus" ~ sigma), ylab = expression(beta), xlab = expression(sigma))
+abline(lm_1)
 #j
+lm_2 <- lm(mydata_mean ~ betas)
 plot(betas,mydata_mean, xlim=c(0,2),ylim=c(0,1.8),main=expression("Systematic Risk versus Return"), ylab="Avg. Return", xlab=expression(beta))
+#abline(lm_2)
+#abline(a=0, b=1)
