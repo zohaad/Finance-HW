@@ -11,7 +11,6 @@ mydata$Date <- NULL
 mydata[mydata == -99.99 | mydata == -999] <- NA
 # || only evaluates FIRST element and returns one boolean value in a one-dimensional vector
 # | evaluates everything and returns boolean values in a n-dimensional vector
-
 mydata_mean <- colMeans(mydata, na.rm = TRUE)
 mydata_sd <- apply(mydata, 2, sd, na.rm = TRUE)
 # uses Bessel's correction
@@ -35,8 +34,8 @@ for(i in 1:49){
 lm_1 <- lm(betas ~ mydata_sd)
 plot(mydata_sd,betas, xlim= c(0,20), ylim=c(0,2), main=expression(beta ~ "versus" ~ sigma), ylab = expression(beta), xlab = expression(sigma))
 abline(lm_1)
+abline(a=0,b=1)
 #j
 lm_2 <- lm(mydata_mean ~ betas)
 plot(betas,mydata_mean, xlim=c(0,2),ylim=c(0,1.8),main=expression("Systematic Risk versus Return"), ylab="Avg. Return", xlab=expression(beta))
-#abline(lm_2)
-#abline(a=0, b=1)
+abline(a=0, b=1)
